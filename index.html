@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title>大屏可视化项目</title>
+    <script>
+      const clientwidth = document.documentElement.clientWidth;
+      const clientheight = document.documentElement.clientHeight;
+      var pagewidth;
+      let pageheight;
+      if (clientwidth / clientheight > 16 / 9) {
+        pagewidth = clientheight * (16 / 9);
+      } else {
+        pagewidth = clientwidth;
+      }
+      pageheight = pagewidth / (16 / 9);
+      const string = `<style> 
+    html{
+      font-size: ${pagewidth / 100}px;
+    }
+    </style>`;
+      document.write(string);
+    </script>
+  <script type="module" crossorigin src="./assets/index.b8b9a329.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.950502a4.js">
+  <link rel="stylesheet" href="./assets/index.9dd38e7d.css">
+</head>
+  <body>
+    <div id="root"></div>
+    
+    
+    <script>
+      root.style.height = pageheight + "px";
+      // root.style.width = pagewidth + "px";
+      root.style.marginTop = (clientheight - pageheight) / 2 + "px";
+    </script>
+  </body>
+</html>
